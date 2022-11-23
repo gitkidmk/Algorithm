@@ -1,3 +1,5 @@
+# 효율성 실패....
+
 # dictionary copy할때 deepcopy 잊지말기
 from copy import deepcopy
 
