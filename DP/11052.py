@@ -1,17 +1,20 @@
-def dp(N,i):
-    return N//i * arr[i] + max_result[N%i]
+import sys
 
+n = int(input())
+a = list(map(int, sys.stdin.readline().split()))
+a.insert(0,0)
 
-N = int(input())
-arr = list(map(int, input().split()))
-arr.insert(0, 0)
+d=[0]*(n+1)
 
-max_result = [0]*(N+1)
+d[1] = a[1]
 
-for i in range(1,N+1):
-    dp_list = []
-    for j in range(1, i+1):
-        a = dp(i,j)
-        dp_list.append(a)
-    max_result[i] = max(dp_list)
-print(max_result[-1])
+dp_arr = []
+
+for i in range(2,n+1):
+    for j in range(i-1,int(i/2)-1,-1):
+        dp_arr.append(d[j]+d[i-j])
+
+    dp_max = max(dp_arr)
+    d[i] = max(a[i], dp_max)
+
+print(d[-1])
