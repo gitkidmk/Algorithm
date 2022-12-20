@@ -1,10 +1,6 @@
-class Solution {
-    public static void main(String[] args) {
-        Solution s = new Solution();
-        int result = s.solution(2,1,20);
+package Implementation;
 
-        System.out.printf("result: %d%n", result);
-    }
+class Solution {
 
     public int solution(int a, int b, int n) {
         int answer = 0;
@@ -17,5 +13,9 @@ class Solution {
         return answer;
     }
 
+    public static void main(String[] args) {
+        int result = new Solution().solution(2, 1, 20);
+        System.out.printf("result: %d%n", result);
+    }
 }
 
