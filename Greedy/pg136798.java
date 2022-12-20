@@ -3,7 +3,7 @@ package Greedy;
 import java.util.Arrays;
 
 class Solution {
-    int sosu(int number){
+    int countDivisor(int number){
         //number는 무조건 0 초과이다
         int count = 0;
         for(int i=1; i*i<=number; i++){
@@ -16,9 +16,9 @@ class Solution {
     public int solution(int number, int limit, int power) {
         int answer = 0;
         int[] arr = new int[number];
-        // 1~number를 돌면서 각 소수 개수 arr를 생성한다
+        // 1~number를 돌면서 각 약수 개수 arr를 생성한다
         for(int i=1; i<=number; i++){
-            arr[i-1] = sosu(i);
+            arr[i-1] = countDivisor(i);
         }
         
         //arr를 돌면서 limit 초과이면 power로 교체한다
