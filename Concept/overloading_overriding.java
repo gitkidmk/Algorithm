@@ -1,4 +1,4 @@
-package concept;
+package Concept;
 
 class Parent {
 
