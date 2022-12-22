@@ -21,8 +21,25 @@ class Solution_140107 {
         return answer;
     }
 
+    public long solution_final(int k, int d) {
+        // 반복문을 두 번 쓰지 않는다. 한 번만 사용한다.
+        // 정수형: byte, short, int, long
+        // 실수형: float, double
+        long answer = 0;
+        long dd = (long) Math.pow(d,2);
+
+        
+        for(int x=0; x<=d; x=x+k){
+            long xx = (long) Math.pow(x,2);
+            int max_y = (int)Math.pow(dd-xx,0.5);
+            answer += (max_y)/k + 1;
+        }
+
+        return answer;
+    }
+
     public static void main(String[] args) {
-        long result = new Solution_140107().solution(2, 4);
+        long result = new Solution_140107().solution_final(2, 4);
         System.out.printf("result: %d%n", result);
     }
 }
