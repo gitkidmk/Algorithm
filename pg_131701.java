@@ -23,31 +23,16 @@ class Solution {
             
         // Set 인터페이스의 tot_set 생성
         Set<Integer> tot_set = new HashSet<>();
-        int s = 0;
-        // 1. 부분집합 길이가 1일때
-        for (int e : elements){
-            tot_set.add(e);
-            s += e;
-        }
-        // 2. 부분집합 길이가 elements 길이일때
-        tot_set.add(s);
 
-        System.out.println(tot_set);
-
-        // 3. 부분집합 길이가 2에서 (elements길이 - 1) 일때
         // for 부분집합 길이 : 2 ~ (elements길이-1) = i (1일때와 elements길이 에서의 tot_set은 명확하다)
             // getSubSum(i) 호출
-        for (int i=2; i<elements.length; i++){
+        for (int i=1; i<=elements.length; i++){
             Set<Integer> ss = getSubSum(i);
             tot_set.addAll(ss);
         }
 
         // answer에 tot_set 개수 담는다.
         answer = tot_set.size();
-        
-        System.out.println(tot_set);
-        System.out.println(answer);
-
 
         return answer;
     }
